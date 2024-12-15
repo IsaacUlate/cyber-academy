@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* globals.css */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0;
+  font-weight: bold;
+  color: #0B1F48;
+}
+
+p {
+  margin: 0.5em 0;
+  line-height: 1.6;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5; /* Un color de fondo claro */
+  color: #333; /* Texto oscuro para buen contraste */
+}
+
+input, button, h1, h2, ul, li, p {
+  color: #0B1F48; /* Color azul oscuro definido */
+}
+
+input::placeholder {
+  color: #9CA3AF; /* Asegura un color visible para los placeholders */
+}
+
+button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1F2937; /* Cambio de color al pasar por encima */
+}
+
