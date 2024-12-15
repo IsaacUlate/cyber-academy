@@ -29,10 +29,10 @@ export default function Navbar() {
           {/* Menú para escritorio */}
           <div className="hidden md:flex md:space-x-8">
             <Link href="/" className="text-white hover:text-[#F4A300] transition">
-              Inicio
+              Home
             </Link>
-            <Link href="/noticias" className="text-white hover:text-[#F4A300] transition">
-              Noticias
+            <Link href="/cyber-threats" className="text-white hover:text-[#F4A300] transition">
+            cyber-threats
             </Link>
             <Link href="/calculadora-imc" className="text-white hover:text-[#F4A300] transition">
               Calculadora IMC
@@ -65,10 +65,10 @@ export default function Navbar() {
         <div className="md:hidden bg-[#0B1F48]">
           <div className="flex flex-col space-y-2 px-4 py-2">
             <Link href="/" className="text-white hover:text-[#F4A300] transition">
-              Inicio
+            Home
             </Link>
             <Link href="/noticias" className="text-white hover:text-[#F4A300] transition">
-              Noticias
+            cyber-threats
             </Link>
             <Link href="/calculadora-imc" className="text-white hover:text-[#F4A300] transition">
               Calculadora IMC

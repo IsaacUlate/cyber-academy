@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "./Navbar"; // Asegúrate de tener este archivo
+import Navbar from "./Navbar"; // Ensure Navbar exists in the same folder
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ALCO",
-  description: "Plataforma informativa para la Asociación Lucha Contra la Obesidad",
+  title: "Cyber",
+  description: "Cyber",
 };
 
 export default function RootLayout({
@@ -27,13 +27,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* Navbar */}
-        <Navbar />
-        
-        {/* Main content */}
-        <main className="pt-20">
-          {children} {/* Esto renderiza el contenido de las páginas */}
-        </main>
+        {/* Full-page layout with flexbox to keep footer at the bottom */}
+        <div className="flex flex-col min-h-screen bg-gray-100 text-[#0B1F48] font-sans">
+          {/* Navbar */}
+          <Navbar />
+
+          {/* Main content */}
+          <main className="flex-grow pt-20">
+            {children} {/* Render page content */}
+          </main>
+
+          {/* Footer */}
+          <footer className="bg-gray-800 py-6 text-gray-400 text-center">
+            <p>&copy; Cyber.</p>
+          </footer>
+        </div>
       </body>
     </html>
   );

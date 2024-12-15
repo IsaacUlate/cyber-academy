@@ -51,19 +51,19 @@ export default function NewsPage() {
   };
 
   const handleViewNews = (id) => {
-    router.push(`/noticias/${id}`);
+    router.push(`/cyber-threats/${id}`);
   };
 
   return (
-    <div className="bg-white min-h-screen text-[#0B1F48] font-sans">
+    <div className="bg-[#0B0F19] min-h-screen text-[#E5E7EB] font-sans">
       {/* Hero Section */}
-      <section className="text-center py-24 bg-gray-50">
+      <section className="text-center py-24 bg-gradient-to-r from-[#0B0F19] to-[#1A2238]">
         <div className="max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4 leading-tight">
-            Últimas <span className="text-[#4B5563]">Noticias</span>
+          <h1 className="text-5xl font-bold mb-4 leading-tight text-[#00C3FF]">
+            Latest <span className="text-[#3ABFF8]">Cybersecurity News</span>
           </h1>
-          <p className="text-lg text-gray-600 mb-8">
-            Entérate de las noticias más recientes relacionadas con la salud y bienestar.
+          <p className="text-lg text-gray-400 mb-8">
+            Stay updated with the latest threats, updates, and solutions in cybersecurity.
           </p>
         </div>
       </section>
@@ -71,17 +71,19 @@ export default function NewsPage() {
       {/* News List Section */}
       <section className="max-w-7xl mx-auto px-6 py-16">
         {loading ? (
-          <p className="text-center text-gray-400">Cargando noticias...</p>
+          <p className="text-center text-gray-400">Loading news...</p>
         ) : visibleNews.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {visibleNews.map((news) => (
               <div
                 key={news._id}
-                className="p-6 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow h-full flex flex-col"
+                className="p-6 border border-[#1E2A47] bg-[#1A1F2F] rounded-lg hover:shadow-lg transition-shadow h-full flex flex-col"
               >
-                <h3 className="text-2xl font-bold mb-3">{news.title}</h3>
-                <p className="text-sm text-gray-500 mb-4">
-                  Fecha:{" "}
+                <h3 className="text-2xl font-bold mb-3 text-[#00C3FF]">
+                  {news.title}
+                </h3>
+                <p className="text-sm text-gray-400 mb-4">
+                  Published on:{" "}
                   {new Date(news.scheduledDate).toLocaleDateString("es-ES", {
                     year: "numeric",
                     month: "long",
@@ -91,9 +93,7 @@ export default function NewsPage() {
                     hour12: true,
                   })}
                 </p>
-                <div
-                  className="text-gray-700 mb-4 text-justify leading-relaxed flex-grow"
-                >
+                <div className="text-gray-300 mb-4 text-justify leading-relaxed flex-grow">
                   <div
                     dangerouslySetInnerHTML={{
                       __html: news.content.replace(/<[^>]*>/g, "").substring(0, 100) + "...",
@@ -102,16 +102,16 @@ export default function NewsPage() {
                 </div>
                 <button
                   onClick={() => handleViewNews(news._id)}
-                  className="text-[#2563EB] font-semibold hover:bg-[#d1d0d0] underline self-start"
+                  className="text-[#00C3FF] font-semibold hover:text-[#3ABFF8] underline self-start transition"
                 >
-                  Leer más
+                  Read More
                 </button>
               </div>
             ))}
           </div>
         ) : (
-          <p className="text-center text-gray-500">
-            No hay noticias disponibles en este momento.
+          <p className="text-center text-gray-400">
+            No news available at the moment.
           </p>
         )}
 
@@ -119,9 +119,9 @@ export default function NewsPage() {
           <div className="text-center mt-8">
             <button
               onClick={handleShowMore}
-              className="bg-[#0B1F48] text-white py-3 px-8 rounded-lg font-medium hover:bg-[#092841] transition-all shadow-md"
+              className="bg-[#00C3FF] text-white py-3 px-8 rounded-lg font-medium hover:bg-[#3ABFF8] transition-all shadow-md"
             >
-              Ver más noticias
+              Show More
             </button>
           </div>
         )}

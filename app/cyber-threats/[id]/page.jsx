@@ -38,7 +38,7 @@ export default function NewsDetailPage() {
     return <p className="text-center text-gray-500">Noticia no encontrada.</p>;
   }
 
-  const shareUrl = `${window.location.origin}/noticias/${id}`;
+  const shareUrl = `${window.location.origin}/cyber-threats/${id}`;
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(shareUrl);

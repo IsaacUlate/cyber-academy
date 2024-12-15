@@ -14,48 +14,52 @@
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
-/* globals.css */
-
-h1, h2, h3, h4, h5, h6 {
-  margin: 0.5em 0;
-  font-weight: bold;
-  color: #0B1F48;
-}
-
-p {
-  margin: 0.5em 0;
-  line-height: 1.6;
-}
-
-
-body {
+/* Reset margins and paddings */
+/* Ensure no gaps due to margins or paddings */
+html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5; /* Un color de fondo claro */
-  color: #333; /* Texto oscuro para buen contraste */
+  background: #0D1117; /* Matches navbar background */
+  overflow-x: hidden;
 }
 
-input, button, h1, h2, ul, li, p {
-  color: #0B1F48; /* Color azul oscuro definido */
+/* Navbar Fix */
+header {
+  background: #0D1117;
+  border: none;
+  margin: 0;
+  padding: 0;
+  z-index: 50;
 }
 
-input::placeholder {
-  color: #9CA3AF; /* Asegura un color visible para los placeholders */
+/* Prevent White Line with a Background Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0D1117;
+  z-index: -1;
 }
 
-button {
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+/* Reset universal para evitar márgenes o padding no deseado */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0D1117; /* Asegura fondo consistente */
+  overflow-x: hidden; /* Previene scroll horizontal */
 }
 
-button:hover {
-  background-color: #1F2937; /* Cambio de color al pasar por encima */
+header {
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
 }
+
+
+
 
